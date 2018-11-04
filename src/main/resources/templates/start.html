@@ -1,11 +1,30 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Spring Boot Hello World Example with JSP</title>
-    </head>
-        <body>
-            <h2>College_Boys` Chat</h2>
+<head>
+    <meta charset="UTF-8">
+    <title>College_Boys Chat</title>
+</head>
+<body>
+<form action="/enter" method="get" name="EnterForm">
+    <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Войти</p>
 
+    <p><input maxlength="20" type="text" value="Login"/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
 
-        </body>
+    <p><input type="password" value="Password"/></p>
+
+    <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input name="Enter" type="button" value="Войти"/></p>
+</form>
+
+<form action="register" method="get" name="Register">
+    <p>&nbsp; &nbsp; &nbsp; &nbsp; Зарегистрироваться</p>
+
+    <p><input name="Login" type="text" value="Login"/></p>
+
+    <p>&nbsp; &nbsp;<input name="Register" type="button" value="Зарегистрироваться"/></p>
+</form>
+
+<p>&nbsp;</p>
+
+</body>
 </html>

@@ -6,6 +6,7 @@ import collegeboys.server.entity.Message;
 import collegeboys.server.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -30,24 +31,10 @@ public class MyController {
         return "start";
     }
 
-    @RequestMapping(value = "/enter")
-    public String hello(){
-        return "test";
+    @RequestMapping(value = "/enter",method = RequestMethod.GET)
+    public String enter(Model model){
+
+        return "connect/login";
     }
 
-    public List<User>getUsers(){
-        return usersRepository.findAll();
-    }
-
-    public List<Message> getMessage(){
-        return  messageRepository.findAll();
-    }
-
-    public boolean addUser(User user){
-        return usersRepository.save(user)!=null;
-    }
-
-    public boolean addMessage(Message message){
-        return messageRepository.save(message)!=null;
-    }
 }
