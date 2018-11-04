@@ -5,31 +5,30 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Message")
+@Table(name = "MESSAGE")
 public class Message {
-
     @Id
     @GeneratedValue
-    @Column
+    @Column(name = "id",unique = true,nullable = false)
     private Long id;
 
-    @Column(name = "Text")
+    @Column(name = "text",nullable = false)
     private String text;
 
-    @Column(name = "time")
+    @Column(name = "date",nullable = false)
     private Date date;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id",nullable = false)
-    private User user;
-
-    public Message(String text, Date date, User user) {
-        this.text = text;
-        this.date = date;
-        this.user = user;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id", nullable = false)
+    private Person person;
 
     public Message() {
+    }
+
+    public Message(String text, Date date, Person person) {
+        this.text = text;
+        this.date = date;
+        this.person = person;
     }
 
     public Long getId() {
@@ -56,12 +55,12 @@ public class Message {
         this.date = date;
     }
 
-    public User getUser() {
-        return user;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     @Override
@@ -72,12 +71,21 @@ public class Message {
         return Objects.equals(id, message.id) &&
                 Objects.equals(text, message.text) &&
                 Objects.equals(date, message.date) &&
-                Objects.equals(user, message.user);
+                Objects.equals(person, message.person);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, text, date, user);
+        return Objects.hash(id, text, date, person);
     }
 
+    @Override
+    public String toString() {
+        return "Message{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", date=" + date +
+                ", person=" + person +
+                '}';
+    }
 }
