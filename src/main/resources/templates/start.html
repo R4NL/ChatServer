@@ -5,23 +5,21 @@
 </head>
 <body>
 <form action="/enter" method="get" name="EnterForm">
-    <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Войти</p>
 
-    <p><input maxlength="20" type="text" value="Login"/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <p><input maxlength="20" type="text" value="Login" name="Login"/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp;
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
 
-    <p><input type="password" value="Password"/></p>
+    <p><input type="password" value="Password" name="Password"/></p>
 
-    <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input name="Enter" type="button" value="Войти"/></p>
+    <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<button>Войти</button>
+    </p>
 </form>
 
-<form action="register" method="get" name="Register">
-    <p>&nbsp; &nbsp; &nbsp; &nbsp; Зарегистрироваться</p>
-
-    <p><input name="Login" type="text" value="Login"/></p>
-
-    <p>&nbsp; &nbsp;<input name="Register" type="button" value="Зарегистрироваться"/></p>
+<form action="/register" method="get" name="Register">
+    <p>&nbsp; &nbsp;<button>Зарегистрироваться</button>
+    </p>
 </form>
 
 <p>&nbsp;</p>
