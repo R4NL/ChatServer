@@ -3,6 +3,7 @@ package collegeboys.server.ServerTest;
 import collegeboys.server.Server.ChatServer;
 import collegeboys.server.Server.Connection.SingleConnection;
 import collegeboys.server.Server.MessageHandler.MessageProvider;
+import collegeboys.server.Server.MessageHandler.MessageRender;
 import collegeboys.server.entity.Message;
 
 import java.util.ArrayList;
@@ -39,5 +40,13 @@ public class ServerTest {
         SingleConnection singleConnection = new SingleConnection(provider, connections, messages, 885553535);
         assertFalse(singleConnection.equals(null));
         assertFalse(singleConnection.hashCode() > 0);
+    }
+    
+     @Test
+    public void messageProviderTest(){
+        Message message=new Message("Test",new Date(),new Person("Solarich","Solarich"));
+        MessageRender render=new MessageRender();
+        assertTrue(render.renderMessage(message).contains("Test"));
+        assertTrue(render.renderMessage(message).contains("Solarich"));
     }
 }
