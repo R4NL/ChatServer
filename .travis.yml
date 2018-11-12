@@ -8,4 +8,4 @@ java:
     composer install --no-interaction
 
   script:
-    - vendor/bin/javaunit
+    mvn test -B
