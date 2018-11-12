@@ -31,4 +31,5 @@ public class MessageTest {
                 new Person("TheAleshka", "1234"));
         assertTrue(message.getText() == "Hello world");
     }
+
 }

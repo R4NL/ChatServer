@@ -67,4 +67,8 @@ public class StartController {
         }
     }
 
+
+    public  List<Message> getMessageList(){
+        return messageRepository.findAll();
+    }
 }
