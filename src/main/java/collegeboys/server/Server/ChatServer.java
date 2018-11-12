@@ -21,7 +21,7 @@ public class ChatServer {
         super();
     }
 
-    private boolean init() {
+    public boolean init() {
         try {
             this.serverSocket = new ServerSocket(20000);
 
