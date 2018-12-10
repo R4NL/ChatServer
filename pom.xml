@@ -6,7 +6,7 @@
     <groupId>CollegeBoys</groupId>
     <artifactId>server</artifactId>
     <version>0.0.1-Alpha</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>server</name>
     <description>Demo project for Spring Boot</description>
@@ -78,28 +78,29 @@
 
     <build>
         <plugins>
-            <plugin>
+            <!--<plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.5</version>
                 <configuration>
                     <imageName>springdocker</imageName>
                     <baseImage>java</baseImage>
-                    <entryPoint>["java", "-war", "/${project.build.finalName}.war"]</entryPoint>
+                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
                             <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.war</include>
+                            <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
                 </configuration>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <finalName>Server</finalName>
     </build>
 
     <repositories>
